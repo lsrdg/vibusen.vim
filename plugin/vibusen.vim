@@ -7,11 +7,13 @@ if !exists('g:IbusDefaultEngine')
 endif
 
 function! SetNormalModeEngine()
+    silent !clear
     execute "!ibus engine " . g:IbusDefaultEngine
 endfunction
 
 function! SetInsertModePreviousEngine()
     if exists('s:curengine')
+	silent !clear
 	execute "!ibus engine " . s:curengine
     endif
 endfunction
