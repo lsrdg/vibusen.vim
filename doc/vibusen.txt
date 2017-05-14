@@ -1,0 +1,51 @@
+*vibusen.txt* Handles normal mode default Ibus engine
+       _ _                          ~
+__   _(_) |__  _   _ ___  ___ _ __  ~
+\ \ / / | '_ \| | | / __|/ _ \ '_ \ ~
+ \ V /| | |_) | |_| \__ \  __/ | | |~
+  \_/ |_|_.__/ \__,_|___/\___|_| |_|~
+                                    
+
+====================================================================
+CONTENTS                                           *VibusenContents*
+
+1. Introduction ......... |VibusenIntroduction|
+2. Usage ................ |VibusenUsage| 
+3. Mappings ............. |VibusenMappings| 
+5. Limitations .......... |VibusenLimitations| 
+6. Contributing ......... |VibusenContributing|
+8. Credits .............. |VibusenCredits|
+4. License .............. |VibusenLicense| 
+
+====================================================================
+Section 1: Introduction                        *VibusenIntroduction*
+
+This document assumes that if you are here you problably know: 
+
+- what Vim and Ibus are
+- you know what Vim's modes are and how enter and leave them
+- your Ibus is configured to make use of two or more keyboard layouts
+- you have noticed the inconvenience between writing and editing while
+    while making use of different language layouts.
+
+Now that we are clear about those, let's move on (or else, make use of
+a search engine):
+
+Vim has several several modes. Ibus enables the user to change between
+several keyboard layouts.
+
+The problem is that changing the layout will also change how Vim
+interprets normal mode commands.
+
+Vibusen makes it possible to define a default kayboard layout (called
+"engine" in Ibus) to normal mode. This way, it is possible to avoid
+the confusion of commands moving around, as the layout changes.
+
+It also helps to write (in insert mode) in languages like Japanese,
+Korean, Chinese, etc, since Vim's normal mode doesn't understand these
+languages. In this case the user needs to type in the language, but 
+swtich back to e.g. English to use normal mode commands. 
+
+Pretty annoying.
+
+
