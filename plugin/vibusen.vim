@@ -1,29 +1,29 @@
-function! GetEngine()
-    let s:curengine=system('ibus engine')
+function! VibusenGetEngine()
+    let s:VibusenCurrentEngine=system('ibus engine')
 endfunction
 
-if !exists('g:IbusDefaultEngine')
-    let g:IbusDefaultEngine = 'xkb:us::eng'
+if !exists('g:VibusenDefaultEngine')
+    let g:VibusenDefaultEngine = 'xkb:us::eng'
 endif
 
-function! SetNormalModeEngine()
-    silent execute "!ibus engine " . g:IbusDefaultEngine
+function! VibusenSetNormalModeEngine()
+    silent execute "!ibus engine " . g:VibusenDefaultEngine
 endfunction
 
-function! SetInsertModePreviousEngine()
-    if exists('s:curengine')
-	silent execute "!ibus engine " . s:curengine
+function! VibusenSetInsertModePreviousEngine()
+    if exists('s:VibusenCurrentEngine')
+	silent execute "!ibus engine " . s:VibusenCurrentEngine
     endif
 endfunction
 
-augroup normalentering
+augroup vibusennormalentering
     au!
-    autocmd InsertLeave * :call GetEngine()
-    autocmd InsertLeave * :call SetNormalModeEngine()
+    autocmd InsertLeave * :call VibusenGetEngine()
+    autocmd InsertLeave * :call VibusenSetNormalModeEngine()
 augroup END
 
-augroup insertentering
+augroup vibuseninsertentering
     au!
-    autocmd InsertEnter * :call SetInsertModePreviousEngine()
+    autocmd InsertEnter * :call VibusenSetInsertModePreviousEngine()
 augroup END
 
