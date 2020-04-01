@@ -13,7 +13,6 @@ endfunction
 function! VibusenSetInsertModePreviousEngine()
     if !exists('s:VibusenCurrentEngine')
       silent execute "!ibus engine " . g:VibusenDefaultEngine
-      silent execute "!ibus engine " . s:VibusenCurrentEngine
     else
       silent execute "!ibus engine " . s:VibusenCurrentEngine
     endif
